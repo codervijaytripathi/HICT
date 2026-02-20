@@ -18,7 +18,7 @@
             --border-medium: #d2d2d7;
             --accent-black: #1d1d1f;
             --accent-white: #ffffff;
-            --accent-blue: #0066cc;      /* Apple blue for hover */
+            --accent-blue: #0066cc;      /* kept for some interactions, but cards use black */
             --shadow-sm: 0 2px 8px rgba(0,0,0,0.02);
             --shadow-md: 0 8px 20px rgba(0,0,0,0.04);
             --shadow-lg: 0 20px 40px rgba(0,0,0,0.06);
@@ -59,7 +59,7 @@
         }
 
         /* -------------------------------
-           LOADER (Apple style)
+           LOADER (Gonexus text with underline animation)
         ----------------------------------- */
         .loader-wrapper {
             position: fixed;
@@ -80,18 +80,30 @@
             visibility: hidden;
         }
 
-        .loader {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--border-medium);
-            border-top: 2px solid var(--accent-black);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
+        .loader-text {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .loader-text::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent-black);
+            animation: underlineGrow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes underlineGrow {
+            0% { width: 0; left: 0; }
+            50% { width: 100%; left: 0; }
+            100% { width: 0; left: 100%; }
         }
 
         /* -------------------------------
@@ -119,7 +131,7 @@
             box-shadow: var(--shadow-sm);
         }
 
-        /* Logo with icon */
+        /* Logo with icon and hover effect */
         .logo {
             display: flex;
             align-items: center;
@@ -128,6 +140,12 @@
             font-weight: 700;
             letter-spacing: -0.05em;
             color: var(--text-primary);
+            transition: transform 0.2s, text-shadow 0.2s;
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+            text-shadow: 0 0 8px rgba(0,0,0,0.1);
         }
 
         .logo-icon {
@@ -211,7 +229,7 @@
             transform: scale(1.02);
         }
 
-        /* Mobile menu button - animated */
+        /* Mobile menu button - square lines */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -235,7 +253,7 @@
             width: 20px;
             height: 2px;
             background-color: var(--text-primary);
-            border-radius: 2px;
+            border-radius: 0; /* square ends */
             transition: 0.3s;
         }
 
@@ -322,7 +340,7 @@
         }
 
         /* -------------------------------
-           HERO SECTION
+           HERO SECTION (enhanced)
         ----------------------------------- */
         .hero {
             position: relative;
@@ -367,7 +385,7 @@
             border: 1px solid var(--border-light);
         }
 
-        /* Typewriter effect */
+        /* Typewriter effect with larger presence */
         .hero-title {
             font-size: clamp(2.8rem, 8vw, 4.5rem);
             line-height: 1.1;
@@ -560,8 +578,8 @@
         }
 
         .category-card:hover {
-            border-color: var(--accent-blue);
-            box-shadow: var(--shadow-lg), 0 0 0 2px rgba(0,102,204,0.1);
+            border-color: var(--accent-black);
+            box-shadow: var(--shadow-lg), 0 0 0 2px rgba(0,0,0,0.1);
             transform: scale(1.02) translateY(-3px);
         }
 
@@ -621,10 +639,10 @@
 
         .category-card:hover .cat-arrow {
             transform: translateX(5px);
-            color: var(--accent-blue);
+            color: var(--accent-black);
         }
 
-        /* template cards - advanced hover */
+        /* template cards - advanced hover with black unique effect */
         .templates-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -647,7 +665,7 @@
             inset: 0;
             border-radius: 24px;
             padding: 2px;
-            background: linear-gradient(145deg, transparent, var(--accent-blue));
+            background: var(--accent-black);
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
@@ -658,7 +676,7 @@
 
         .template-card:hover {
             transform: scale(1.02) translateY(-6px);
-            box-shadow: var(--shadow-lg), 0 10px 30px -10px rgba(0,102,204,0.2);
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3), 0 0 0 2px rgba(0,0,0,0.1);
             border-color: transparent;
         }
 
@@ -840,7 +858,7 @@
 
         .cta-box:hover {
             box-shadow: var(--shadow-md);
-            border-color: var(--accent-blue);
+            border-color: var(--accent-black);
         }
 
         .cta-title {
@@ -969,24 +987,52 @@
             }
         }
 
+        /* Mobile text size reductions */
         @media (max-width: 768px) {
             .hero-title {
-                font-size: clamp(2.2rem, 7vw, 3.5rem);
+                font-size: clamp(2rem, 6vw, 2.8rem);
             }
             .hero-subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             .hero-stats {
-                gap: 30px;
+                gap: 20px;
             }
-            .section {
-                padding: 70px 16px;
+            .stat-number {
+                font-size: 1.6rem;
             }
-            .features-section {
-                padding: 60px 20px;
+            .stat-label {
+                font-size: 0.8rem;
             }
-            .cta-box {
-                padding: 50px 20px;
+            .section-title {
+                font-size: clamp(1.8rem, 4vw, 2.2rem);
+            }
+            .section-tag {
+                font-size: 0.8rem;
+            }
+            .template-name {
+                font-size: 1.2rem;
+            }
+            .template-desc {
+                font-size: 0.8rem;
+            }
+            .template-price {
+                font-size: 1.1rem;
+            }
+            .feature-title {
+                font-size: 1.1rem;
+            }
+            .feature-desc {
+                font-size: 0.9rem;
+            }
+            .cta-title {
+                font-size: 1.8rem;
+            }
+            .cta-subtitle {
+                font-size: 1rem;
+            }
+            .footer-brand h3 {
+                font-size: 1.4rem;
             }
         }
 
@@ -999,6 +1045,14 @@
             .footer-brand {
                 grid-column: span 2;
             }
+            /* Footer bottom centered & small */
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                font-size: 0.7rem;
+                gap: 8px;
+            }
         }
 
         /* utilities */
@@ -1009,9 +1063,9 @@
     </style>
 </head>
 <body>
-    <!-- Loader -->
+    <!-- Loader with Gonexus text and underline animation -->
     <div class="loader-wrapper" id="loader">
-        <div class="loader"></div>
+        <div class="loader-text">Gonexus</div>
     </div>
 
     <!-- Navbar -->
