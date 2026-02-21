@@ -6,7 +6,7 @@
     <title>Gonexus – Premium Website Templates</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* -------------------------------
+    /* -------------------------------
            CSS VARIABLES (Apple palette)
         ----------------------------------- */
         :root {
@@ -18,7 +18,7 @@
             --border-medium: #d2d2d7;
             --accent-black: #1d1d1f;
             --accent-white: #ffffff;
-            --accent-blue: #0066cc;      /* kept for some interactions, but cards use black */
+            --accent-blue: #0066cc;
             --shadow-sm: 0 2px 8px rgba(0,0,0,0.02);
             --shadow-md: 0 8px 20px rgba(0,0,0,0.04);
             --shadow-lg: 0 20px 40px rgba(0,0,0,0.06);
@@ -59,7 +59,7 @@
         }
 
         /* -------------------------------
-           LOADER (Gonexus text with underline animation)
+           LOADER
         ----------------------------------- */
         .loader-wrapper {
             position: fixed;
@@ -81,7 +81,7 @@
         }
 
         .loader-text {
-            font-size: 3rem;
+            font-size: 2rem;
             font-weight: 700;
             letter-spacing: -0.02em;
             color: var(--text-primary);
@@ -107,7 +107,7 @@
         }
 
         /* -------------------------------
-           NAVBAR (Apple style)
+           NAVBAR
         ----------------------------------- */
         .navbar {
             position: fixed;
@@ -131,7 +131,6 @@
             box-shadow: var(--shadow-sm);
         }
 
-        /* Logo with icon and hover effect */
         .logo {
             display: flex;
             align-items: center;
@@ -229,7 +228,6 @@
             transform: scale(1.02);
         }
 
-        /* Mobile menu button - square lines */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -253,11 +251,10 @@
             width: 20px;
             height: 2px;
             background-color: var(--text-primary);
-            border-radius: 0; /* square ends */
+            border-radius: 0;
             transition: 0.3s;
         }
 
-        /* Animation for X */
         .mobile-menu-btn.active .menu-line:nth-child(1) {
             transform: translateY(8px) rotate(45deg);
             width: 22px;
@@ -272,7 +269,6 @@
             width: 22px;
         }
 
-        /* Mobile menu overlay */
         .mobile-menu {
             position: fixed;
             top: 0;
@@ -301,7 +297,7 @@
         }
 
         .mobile-nav-links a {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 500;
             color: var(--text-primary);
             transition: color 0.2s;
@@ -323,7 +319,7 @@
 
         .mobile-footer-links a {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: color 0.2s;
         }
 
@@ -333,14 +329,14 @@
         }
 
         /* -------------------------------
-           MAIN CONTENT (offset for fixed navbar)
+           MAIN CONTENT
         ----------------------------------- */
         main {
             padding-top: 80px;
         }
 
         /* -------------------------------
-           HERO SECTION (enhanced)
+           HERO SECTION
         ----------------------------------- */
         .hero {
             position: relative;
@@ -374,7 +370,7 @@
 
         .hero-badge {
             display: inline-block;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             letter-spacing: 0.5px;
             color: var(--text-secondary);
@@ -385,9 +381,8 @@
             border: 1px solid var(--border-light);
         }
 
-        /* Typewriter effect with larger presence */
         .hero-title {
-            font-size: clamp(2.8rem, 8vw, 4.5rem);
+            font-size: clamp(2rem, 6vw, 4.5rem);
             line-height: 1.1;
             font-weight: 700;
             margin-bottom: 20px;
@@ -408,7 +403,7 @@
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
             max-width: 650px;
             margin: 0 auto 35px;
@@ -489,7 +484,7 @@
         }
 
         .section-tag {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             letter-spacing: 1px;
             color: var(--text-secondary);
@@ -498,7 +493,7 @@
         }
 
         .section-title {
-            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-size: clamp(1.8rem, 4vw, 3.2rem);
             font-weight: 600;
             color: var(--text-primary);
             max-width: 600px;
@@ -523,7 +518,7 @@
         .tab-btn {
             background: none;
             border: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 500;
             color: var(--text-secondary);
             padding: 8px 0;
@@ -591,22 +586,23 @@
         }
 
         .cat-icon-wrap {
-            font-size: 2.2rem;
+            font-size: 2rem;
         }
 
         .cat-title-group h3 {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 4px;
         }
 
         .cat-count {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
         }
 
         .cat-desc {
             color: var(--text-secondary);
+            font-size: 0.95rem;
             margin-bottom: 25px;
         }
 
@@ -623,7 +619,7 @@
         }
 
         .cat-tag {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             background: var(--bg-secondary);
             color: var(--text-primary);
             padding: 5px 12px;
@@ -632,7 +628,7 @@
         }
 
         .cat-arrow {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--text-secondary);
             transition: 0.2s;
         }
@@ -642,7 +638,7 @@
             color: var(--accent-black);
         }
 
-        /* template cards - advanced hover with black unique effect */
+        /* template cards */
         .templates-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -723,7 +719,7 @@
             font-weight: 500;
             cursor: pointer;
             transition: 0.2s;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .preview-btn:hover {
@@ -732,7 +728,7 @@
         }
 
         .template-info {
-            padding: 20px;
+            padding: 18px;
         }
 
         .template-header {
@@ -742,7 +738,7 @@
         }
 
         .template-badge {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -762,14 +758,14 @@
         }
 
         .template-name {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 6px;
         }
 
         .template-desc {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin-bottom: 15px;
         }
 
@@ -783,11 +779,11 @@
 
         .template-price {
             font-weight: 600;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .original {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
             text-decoration: line-through;
             margin-left: 5px;
@@ -797,6 +793,7 @@
         .template-rating {
             color: var(--text-primary);
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
         /* features */
@@ -809,7 +806,7 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
             max-width: 1000px;
             margin: 0 auto;
@@ -825,19 +822,20 @@
         }
 
         .feature-icon-box {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 20px;
             color: var(--text-primary);
         }
 
         .feature-title {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 10px;
         }
 
         .feature-desc {
             color: var(--text-secondary);
+            font-size: 0.92rem;
         }
 
         /* CTA */
@@ -862,13 +860,13 @@
         }
 
         .cta-title {
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: clamp(1.6rem, 4vw, 3rem);
             font-weight: 600;
             margin-bottom: 15px;
         }
 
         .cta-subtitle {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: var(--text-secondary);
             margin-bottom: 30px;
         }
@@ -880,7 +878,7 @@
             padding: 14px 40px;
             border-radius: 50px;
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: 0.2s;
             box-shadow: var(--shadow-sm);
         }
@@ -907,7 +905,7 @@
         }
 
         .footer-brand h3 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 600;
             letter-spacing: -0.5px;
             margin-bottom: 15px;
@@ -915,6 +913,7 @@
 
         .footer-brand p {
             color: var(--text-secondary);
+            font-size: 0.9rem;
             margin-bottom: 25px;
             max-width: 300px;
         }
@@ -925,7 +924,7 @@
         }
 
         .social-icon {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
             transition: 0.2s;
         }
@@ -936,7 +935,7 @@
         }
 
         .footer-column h4 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
             margin-bottom: 20px;
         }
@@ -947,6 +946,7 @@
 
         .footer-links a {
             color: var(--text-secondary);
+            font-size: 0.9rem;
             transition: 0.2s;
         }
 
@@ -964,7 +964,7 @@
             display: flex;
             justify-content: space-between;
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             flex-wrap: wrap;
             gap: 15px;
         }
@@ -974,7 +974,9 @@
             text-decoration: underline;
         }
 
-        /* responsive */
+        /* ===============================
+           RESPONSIVE — TABLET (≤ 992px)
+        ================================ */
         @media (max-width: 992px) {
             .nav-links, .nav-buttons {
                 display: none;
@@ -985,73 +987,243 @@
             .navbar {
                 padding: 12px 20px;
             }
-        }
-
-        /* Mobile text size reductions */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: clamp(2rem, 6vw, 2.8rem);
-            }
-            .hero-subtitle {
-                font-size: 1rem;
+            .section {
+                padding: 70px 20px;
             }
             .hero-stats {
-                gap: 20px;
-            }
-            .stat-number {
-                font-size: 1.6rem;
-            }
-            .stat-label {
-                font-size: 0.8rem;
-            }
-            .section-title {
-                font-size: clamp(1.8rem, 4vw, 2.2rem);
-            }
-            .section-tag {
-                font-size: 0.8rem;
-            }
-            .template-name {
-                font-size: 1.2rem;
-            }
-            .template-desc {
-                font-size: 0.8rem;
-            }
-            .template-price {
-                font-size: 1.1rem;
-            }
-            .feature-title {
-                font-size: 1.1rem;
-            }
-            .feature-desc {
-                font-size: 0.9rem;
-            }
-            .cta-title {
-                font-size: 1.8rem;
-            }
-            .cta-subtitle {
-                font-size: 1rem;
-            }
-            .footer-brand h3 {
-                font-size: 1.4rem;
+                gap: 30px;
             }
         }
 
-        /* Footer mobile - 2 columns */
+        /* ===============================
+           RESPONSIVE — MOBILE (≤ 768px)
+        ================================ */
+        @media (max-width: 768px) {
+            /* Loader */
+            .loader-text {
+                font-size: 1.6rem;
+            }
+
+            /* Logo */
+            .logo {
+                font-size: 1.4rem;
+            }
+            .logo-icon {
+                width: 26px;
+                height: 26px;
+                font-size: 0.9rem;
+            }
+
+            /* Hero */
+            .hero {
+                min-height: 80vh;
+                padding: 40px 16px;
+            }
+            .hero-badge {
+                font-size: 0.75rem;
+                padding: 6px 14px;
+                margin-bottom: 20px;
+            }
+            .hero-title {
+                font-size: clamp(1.7rem, 7vw, 2.4rem);
+                min-height: auto;
+                margin-bottom: 14px;
+            }
+            .hero-subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 28px;
+            }
+            .hero-buttons {
+                gap: 10px;
+                margin-bottom: 36px;
+            }
+            .btn {
+                padding: 10px 22px;
+                font-size: 0.9rem;
+            }
+            .hero-stats {
+                gap: 18px;
+            }
+            .stat-number {
+                font-size: 1.4rem;
+            }
+            .stat-label {
+                font-size: 0.75rem;
+            }
+
+            /* Sections */
+            .section {
+                padding: 60px 16px;
+            }
+            .section-header {
+                margin-bottom: 40px;
+            }
+            .section-tag {
+                font-size: 0.72rem;
+                letter-spacing: 0.8px;
+            }
+            .section-title {
+                font-size: clamp(1.5rem, 5.5vw, 2rem);
+            }
+
+            /* Tabs */
+            .tab-nav {
+                gap: 16px;
+            }
+            .tab-btn {
+                font-size: 0.88rem;
+            }
+
+            /* Category cards */
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .category-card {
+                padding: 20px;
+            }
+            .cat-icon-wrap {
+                font-size: 1.6rem;
+            }
+            .cat-title-group h3 {
+                font-size: 1.05rem;
+            }
+            .cat-count {
+                font-size: 0.78rem;
+            }
+            .cat-desc {
+                font-size: 0.85rem;
+                margin-bottom: 16px;
+            }
+            .cat-tag {
+                font-size: 0.7rem;
+                padding: 4px 10px;
+            }
+
+            /* Template cards */
+            .templates-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .template-image {
+                height: 150px;
+                font-size: 2.4rem;
+            }
+            .template-name {
+                font-size: 1.05rem;
+            }
+            .template-desc {
+                font-size: 0.82rem;
+            }
+            .template-price {
+                font-size: 1rem;
+            }
+            .original {
+                font-size: 0.8rem;
+            }
+            .template-rating {
+                font-size: 0.82rem;
+            }
+
+            /* Features */
+            .features-section {
+                border-radius: 24px;
+                padding: 50px 20px;
+                margin: 30px auto;
+            }
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 28px;
+            }
+            .feature-icon-box {
+                font-size: 1.8rem;
+                margin-bottom: 14px;
+            }
+            .feature-title {
+                font-size: 0.95rem;
+            }
+            .feature-desc {
+                font-size: 0.82rem;
+            }
+
+            /* CTA */
+            .cta-box {
+                border-radius: 30px;
+                padding: 50px 24px;
+            }
+            .cta-title {
+                font-size: clamp(1.4rem, 5vw, 1.8rem);
+            }
+            .cta-subtitle {
+                font-size: 0.9rem;
+            }
+            .cta-btn-white {
+                padding: 12px 30px;
+                font-size: 0.95rem;
+            }
+
+            /* Footer */
+            .footer-brand h3 {
+                font-size: 1.2rem;
+            }
+            .footer-brand p {
+                font-size: 0.85rem;
+            }
+            .footer-column h4 {
+                font-size: 0.92rem;
+            }
+            .footer-links a {
+                font-size: 0.82rem;
+            }
+        }
+
+        /* ===============================
+           RESPONSIVE — SMALL MOBILE (≤ 640px)
+        ================================ */
         @media (max-width: 640px) {
+            .hero-title {
+                font-size: clamp(1.5rem, 7.5vw, 2rem);
+            }
+
+            /* Footer 2-column */
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 30px 20px;
+                gap: 24px 16px;
             }
             .footer-brand {
                 grid-column: span 2;
             }
-            /* Footer bottom centered & small */
+
             .footer-bottom {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
                 font-size: 0.7rem;
                 gap: 8px;
+            }
+
+            /* Features single column on very small screens */
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* ===============================
+           RESPONSIVE — VERY SMALL (≤ 380px)
+        ================================ */
+        @media (max-width: 380px) {
+            .hero-title {
+                font-size: 1.4rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .tab-nav {
+                gap: 10px;
+            }
+            .tab-btn {
+                font-size: 0.8rem;
             }
         }
 
